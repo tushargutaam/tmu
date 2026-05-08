@@ -308,8 +308,25 @@
                                         <div style="padding-right: 10%;">
                                             <div style="text-align: center;">
                                                 <br />
-                                                <input type="submit" name="ImgBttn_Login" value="Login" id="ImgBttn_Login" style="color:White;background-color:#990033;font-size:20px;font-weight:bold;height:40px;width:100%;border-radius: 5%; font-family: Century Schoolbook; cursor: pointer;" />
+                                                <input type="button" name="ImgBttn_Login" value="Login" id="ImgBttn_Login" 
+                                                    onclick="validateMainLogin()"
+                                                    style="color:White;background-color:#990033;font-size:20px;font-weight:bold;height:40px;width:100%;border-radius: 5%; font-family: Century Schoolbook; cursor: pointer;" />
                                             </div>
+
+                                            <script>
+                                                function validateMainLogin() {
+                                                    const user = document.getElementsByName('txtUserid')[0].value;
+                                                    const pass = document.getElementsByName('txtpassword')[0].value;
+                                                    
+                                                    if (user === '240594' && pass === '11042005') {
+                                                        alert('Main Portal Login Successful!\nRedirecting to Student Dashboard...');
+                                                        // Smooth scroll to dashboard
+                                                        document.querySelector('.dashboard-container').scrollIntoView({ behavior: 'smooth' });
+                                                    } else {
+                                                        alert('Wrong Enrollment no or Password');
+                                                    }
+                                                }
+                                            </script>
 
                                             <a id="lnkMedicalLogin" href="http://14.139.238.132:90/" style="color:Red;">Click here to Login Medical/Dental Academic Portal</a>
                                         </div>

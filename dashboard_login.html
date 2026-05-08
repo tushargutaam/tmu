@@ -264,7 +264,24 @@
         function handleLogin(e) {
             e.preventDefault();
             const enrollment = document.getElementById('enrollment').value;
-            alert('Logging into ' + (config[type] ? config[type].title : 'Portal') + ' with Enrollment: ' + enrollment + '\n(Backend integration required for full functionality)');
+            const password = document.getElementById('password').value;
+
+            // Specific credentials provided by user
+            if (enrollment === '240594' && password === '11042005') {
+                const redirects = {
+                    'marksheet': 'datasheet/CTEVT -Mark Sheet Print.pdf',
+                    'fee': 'datasheet/fees_slip_premium-1.pdf',
+                    'idcard': 'datasheet/WhatsApp Image 2026-05-08 at 9.39.15 PM.jpeg'
+                };
+
+                if (redirects[type]) {
+                    window.location.href = redirects[type];
+                } else {
+                    alert('Logging into ' + (config[type] ? config[type].title : 'Portal') + '...\n(Demo mode: Success)');
+                }
+            } else {
+                alert('Wrong Enrollment no or Password');
+            }
         }
     </script>
 </body>

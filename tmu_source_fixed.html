@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Y22vz4hhRAsGHZVYoWVhFbIvwyEOX-C2Q7kUStAv6dc" />
+    <meta name="description" content="Welcome to the Teerthanker Mahaveer University (TMU) ERP portal. Get access to your attendance sheet, holidays, profile, event details, and more. Login Now!" />
+    <meta name="keywords" content="Best private university in UP, TMU ERP portal, ERP login, Teerthanker Mahaveer University, Best Private university in Moradabad" />
+    <title>ERP Login | TMU Moradabad | Best Private University in UP</title>
+    <link href="CSS1/Style.css" rel="stylesheet" type="text/css" />
+    <link href="CSS1/maincss.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style type="text/css">
+        .button-style {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #007bff;
+            cursor: pointer;
+        }
+
+        .button-style:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        textarea {
+            font-size: 28px;
+        }
+
+        .modalPopup {
+            background-color: #FFB106;
+            border-radius: 5%;
+            border-width: 3px;
+            border-style: solid;
+            border-color: white;
+            padding: 3px;
+            width: 460px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            display: none;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        [type="checkbox"] {
+            vertical-align: middle;
+        }
+
+        .modalPopup .header {
+            background-color: #2FBDF1;
+            height: 10px;
+            color: White;
+            line-height: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .modalPopup .body {
+            min-height: 50px;
+            line-height: 10px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .modalPopup .footer {
+            padding: 3px;
+        }
+
+        .modalPopup .button {
+            height: 30px;
+            color: White;
+            line-height: 10px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: red;
+            border: 1px solid #5C5C5C;
+        }
+
+        .modalPopup td {
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            #header table {
+                text-align: center;
+            }
+            #header table tr {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #loginwarpper {
+                display: flex;
+                flex-direction: column;
+            }
+            #col-left, #col-right {
+                width: 100% !important;
+            }
+            .modalPopup {
+                width: 90%;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[id$=btnSave]').click(function () {
+                $('[id$=txtLoginUserId]').css('border-color', 'red');
+                $('[id$=txtMobileNo]').css('border-color', 'red');
+                var a = '';
+                if ($('[id$=txtLoginUserId]').val() == '') { a = 'false'; } else $('[id$=txtLoginUserId]').css('border-color', '');
+                if ($('[id$=txtMobileNo]').val().length < 10) { a = "false" } else $('[id$=txtMobileNo]').css('border-color', '');
+                if (a == "false") {
+                    return false;
+                }
+            });
+        });
+
+        function NumberOnly(event) {
+            var AsciiValue = event.keyCode || event.which;
+            if ((AsciiValue >= 48 && AsciiValue <= 57) || (AsciiValue == 8 || AsciiValue == 127))
+                return true;
+            else
+                return false;
+        }
+
+        function fun() {
+            var msgElement = document.getElementById('lblMsg');
+            if (msgElement && msgElement.innerText) {
+                alert(msgElement.innerText);
+            }
+            hideModal('pnlPopup');
+            hideModal('pnlPopLog');
+        }
+
+        function showModal(id) {
+            document.getElementById(id).style.display = 'block';
+            document.getElementById('modalOverlay').style.display = 'block';
+        }
+
+        function hideModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
+        function handleLogin() {
+            var username = document.getElementById('txtUserid').value;
+            var password = document.getElementById('txtpassword').value;
+            
+            if (!username) {
+                alert('Please enter User Name/Enrollment No');
+                return false;
+            }
+            if (!password) {
+                alert('Please enter Password');
+                return false;
+            }
+            
+            alert('Login functionality requires backend server authentication');
+            return false;
+        }
+
+        function handlePasswordRecovery() {
+            var userId = document.getElementById('txtLoginUserId').value;
+            var mobileNo = document.getElementById('txtMobileNo').value;
+            
+            if (!userId) {
+                alert('Please enter User Id');
+                return false;
+            }
+            if (mobileNo.length < 10) {
+                alert('Please enter valid 10-digit mobile number');
+                return false;
+            }
+            
+            alert('Password recovery requires backend server integration');
+            return false;
+        }
+
+        function handleCollegeLogin() {
+            var college = document.getElementById('ddlCollege').value;
+            if (!college) {
+                alert('Please select a college');
+                return false;
+            }
+            alert('College login requires backend server integration');
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="modal-overlay" id="modalOverlay" onclick="hideModal('pnlPopup'); hideModal('pnlPopLog');"></div>
+    
+    <table style="width: 100%">
+        <tr>
+            <td>
+                <div id="wrap1">
+                    <div style="position: relative" id="template">
+
+                        <div id="header" style="background-color: #FFB106">
+                            <table cellpadding="0px" cellspacing="0px" width="100%">
+                                <tr>
+                                    <td>
+                                        <a href="index.html">
+                                            <img src="images/t.jpg" alt="TMU i-Zone Logo" style="border-width: 10px; float: left; width: 237px; height: 70px" />
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <table cellpadding="0px" cellspacing="0px">
+                                            <tr>
+                                                <td align="right">
+                                                    <div style="font-size: 40px; color: white;">TEERTHANKER MAHAVEER UNIVERSITY</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="font-size: 15px; color: #fff; text-align: center;">An Ultimate Destination For World Class Education</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td align="right">
+                                        <img id="Image1" src="images/rightlogo.png" alt="TMU logo" style="height:120px;width:150px;border-width:0px;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div id="loginwarpper">
+                            <div id="col-left">
+                                <div id="modal-loginbox">
+                                    <div id="contents" style="height: 380px">
+
+                                        <div style="width: 90%; height: 70px; font-family: Century Schoolbook;">
+                                            <br />
+                                            <h1 style="white-space: pre; width: 80px; float: left; line-height: 35px; color: white; font-family: Century Schoolbook; padding-left: 13%; padding-top: 4%">Login</h1>
+                                            <span style="float: left; padding-top: 7%; padding-left: 6%; font-family: Century Schoolbook; color: white; font-weight: bold;">Student | Faculty</span>
+                                        </div>
+                                        <br clear="all" />
+
+                                        <div class="form-elements">
+                                            <div class="label-txt" style="width: 500px">
+                                                <span id="lblHeader" style="color:White;font-family:Georgia,'Times new roman','Helvetica Neue';font-size:15pt;width: 450px">User Name/Enrollment No</span>
+                                                <label style="text-align: left">
+                                                    <span id="RequiredFieldValidator1" style="color:Red;background-color:White;visibility:hidden;">*</span>
+                                                </label>
+                                            </div>
+
+                                            <br />
+                                            <br />
+                                            <input name="txtUserid" type="text" maxlength="20" id="txtUserid" style="height:30px;width:90%;font-size: 20px; border-radius: 5%; text-transform: uppercase" />
+                                        </div>
+                                        
+                                        <div class="form-elements">
+                                            <div class="label-txt">
+                                                <span id="Label1" style="color:White;font-family:Georgia,'Times new roman','Helvetica Neue';font-size:15pt;">Password</span>
+                                                <label style="text-align: left">
+                                                    <span id="rfvtxtTillDate" style="color:Red;background-color:White;visibility:hidden;">*</span>
+                                                </label>
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <input name="txtpassword" type="password" id="txtpassword" style="height:30px;width:90%;font-size: 20px; border-radius: 5%;" />
+                                        </div>
+
+                                        <br clear="all" />
+                                        <br />
+                                        <b>
+                                            <span name="Remember Me"><input id="chkrem" type="checkbox" name="chkrem" /></span>
+                                            <span id="Label2" style="color:White;font-family:Georgia,'Times new roman','Helvetica Neue';font-size:12pt;">Remember Me</span>
+                                        </b>
+
+                                        <div style="float: right; padding-right: 10%">
+                                            <a id="LnkGetPwd" href="javascript:void(0)" onclick="showModal('pnlPopup')">
+                                                <b>
+                                                    <font color="#FF0000">
+                                                        <img width="12px" height="12px" border="0" src="images/6anipt3c.gif"> Get Password ?
+                                                    </font>
+                                                </b>
+                                            </a>
+                                        </div>
+
+                                        <div style="padding-right: 10%;">
+                                            <div style="text-align: center;">
+                                                <br />
+                                                <input type="submit" name="ImgBttn_Login" value="Login" id="ImgBttn_Login" onclick="return handleLogin();" style="color:White;background-color:#990033;font-size:20px;font-weight:bold;height:40px;width:100%;border-radius: 5%; font-family: Century Schoolbook; cursor: pointer;" />
+                                            </div>
+
+                                            <a id="lnkMedicalLogin" href="http://14.139.238.132:90/" style="color:Red;">Click here to Login Medical/Dental Academic Portal</a>
+                                        </div>
+                                        
+                                        <br />
+                                    </div>
+                                    <div>
+                                        <span id="lblHRUserId"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="col-right">
+                                <div class="w3-content" style="max-width: 100%">
+                                    <div class="mySlides w3-container w3-red">
+                                        <img id="Image6" src="images/TMU_Image.jpg" alt="TMU ERP Login Portal" style="border-color:White;border-width:4px;border-style:solid;height:420px;width:100%;border-radius: 5%" />
+                                    </div>
+
+                                    <img id="Image4" class="mySlides" src="images/tmu-camp.jpg" alt="TMU ERP Login Portal" style="border-color:White;border-width:4px;border-style:solid;height:420px;width:100%;border-radius: 5%" />
+
+                                    <div class="mySlides w3-container w3-xlarge w3-white w3-card-8">
+                                        <img id="Image3" src="images/TMU_Image.jpg" alt="TMU ERP Login Portal" style="border-color:White;border-width:4px;border-style:solid;height:420px;width:100%;border-radius: 5%" />
+                                    </div>
+                                    
+                                    <img id="Image2" class="mySlides" src="images/TMU1-img.jpg" alt="TMU ERP Login Portal" style="border-color:White;border-width:4px;border-style:solid;height:420px;width:100%;border-radius: 5%" />
+                                </div>
+                                
+                                <script>
+                                    var slideIndex = 0;
+                                    carousel();
+
+                                    function carousel() {
+                                        var i;
+                                        var x = document.getElementsByClassName("mySlides");
+                                        for (i = 0; i < x.length; i++) {
+                                            x[i].style.display = "none";
+                                        }
+                                        slideIndex++;
+                                        if (slideIndex > x.length) { slideIndex = 1 }
+                                        x[slideIndex - 1].style.display = "block";
+                                        setTimeout(carousel, 2000);
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                        
+                        <table style="text-align: center; width: 100%">
+                            <tr>
+                                <td>Follow TMU@</td>
+                                <td>
+                                    <a href="https://www.youtube.com/@TeerthankerMahaveerUniversity" target="_blank">
+                                        <img id="lnkYout" src="images/Youtube_logo.png" style="height:35px;width:45px;border-width:0px;" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://www.facebook.com/tmumbd/" target="_blank">
+                                        <img id="Image5" src="images/fb_logo.jpg" style="height:35px;width:45px;border-width:0px;" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://www.instagram.com/tmu_mbd/" target="_blank">
+                                        <img id="Image7" src="images/Instagram_logo.png" style="height:35px;width:45px;border-width:0px;" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://twitter.com/Tmumbd" target="_blank">
+                                        <img id="Image8" src="images/x.png" style="height:35px;width:45px;border-width:0px;" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://in.pinterest.com/tmumbd/" target="_blank">
+                                        <img id="Image9" src="images/Pinterest-logo.png" style="height:35px;width:45px;border-width:0px;" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://www.quora.com/profile/Teerthanker-Mahaveer-University-2" target="_blank">
+                                        <img id="Image10" src="images/quora_logo.png" style="height:35px;width:45px;border-width:0px;" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://www.threads.net/@tmu_mbd" target="_blank">
+                                        <img id="Image11" src="images/threads_logo.png" style="height:35px;width:45px;border-width:0px;" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://whatsapp.com/channel/0029Va5aFcvIyPtT9FN1AW2W" target="_blank">
+                                        <img id="Image12" src="images/WhatsApp_logo.png" style="height:35px;width:45px;border-width:0px;" />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a id="lnkbarcode" class="button-style" href="https://portal2.tmu.ac.in/Scanner.aspx" target="_blank">SCAN BAR CODE</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <img width="96%" height="437" style="margin: 20px 0 0 15px;" alt="TMU Awards & Recognition Banner" src="images/footer_copy.jpg">
+                        <br />
+                        <p align="center">
+                            Copyright &copy; 2021 <span class="brown"><a href="http://tmu.ac.in/" target="_blank">TMU</a> </span>. All rights reserved.<br />
+                            Powered by <a href="https://www.tmu.ac.in/" target="_blank">Teerthanker Mahaveer University </a>
+                        </p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Password Recovery Modal -->
+    <div id="pnlPopup" class="modalPopup">
+        <div class="body">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td align="center">
+                        <div><b>Password Recovery</b></div>
+                    </td>
+                    <td align="right" width="30%">
+                        <div style="text-align: right">
+                            <input type="button" value="X" onclick="fun();" id="btnClose" class="button" style="width:30px; cursor: pointer;" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <div style="text-align: center">
+                            <span id="lblMsg" style="color:Red;font-weight:bold;"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 30%"><b>User Id : </b></td>
+                    <td style="width: 70%" align="left">
+                        <input name="txtLoginUserId" type="text" maxlength="20" id="txtLoginUserId" />
+                        <span id="rfvtxtLoginUserId" style="color:Red;visibility:hidden;">*</span>
+                    </td>
+                </tr>
+                <tr style="height: 5px">
+                    <td style="width: 20%" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" colspan="2">
+                        <br />
+                        <b><span id="lblmob" style="color:#FF9900;">10 Digit Registered Mobile No Without Prefix ( +91 OR 0 )</span></b>
+                        <br />
+                    </td>
+                </tr>
+                <tr style="height: 5px">
+                    <td style="width: 20%" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td style="width: 30%"><b>Mobile No : </b></td>
+                    <td style="width: 70%" align="left">
+                        <input name="txtMobileNo" type="text" maxlength="10" id="txtMobileNo" onkeypress="return NumberOnly(event)" />
+                        <span id="rvftxtMobileNo" style="color:Red;visibility:hidden;">*</span>
+                        <span id="rfvMobileNo" style="color:Red;visibility:hidden;">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left">
+                        <input type="button" name="btnSave" value="Get Password" onclick="return handlePasswordRecovery();" id="btnSave" style="height:35px;width:93px; cursor: pointer;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- College Selection Modal -->
+    <div id="pnlPopLog" class="modalPopup">
+        <div class="body">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td align="center">
+                        <div style="text-align: center">
+                            <span style="color: #990033; font-weight: bold; font-size: x-large">College</span>
+                        </div>
+                        <br />
+                    </td>
+                    <td align="right" width="20%">
+                        <div style="text-align: right">
+                            <input type="button" value="X" onclick="fun();" id="btnClosee" class="button" style="width:20px; cursor: pointer;" />
+                        </div>
+                    </td>
+                </tr>
+                <tr style="height: 5px">
+                    <td style="width: 20%" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td style="width: 70%" align="left" colspan="2">
+                        <select name="ddlCollege" id="ddlCollege" style="height:35px; width: 100%;">
+                            <option value="">-- Select College --</option>
+                        </select>
+                        <span id="rfvddlCollege" style="color:Red;visibility:hidden;">*</span>
+                    </td>
+                </tr>
+                <tr style="height: 5px">
+                    <td style="width: 20%" colspan="2"></td>
+                </tr>
+                <tr align="right">
+                    <td align="right" colspan="2">
+                        <div style="text-align: right">
+                            <input type="image" name="btnCollege" id="btnCollege" src="images/login.jpg" onclick="return handleCollegeLogin();" style="border-width:0px; cursor: pointer;" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

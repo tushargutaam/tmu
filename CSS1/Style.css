@@ -1,0 +1,334 @@
+﻿ï»¿/* for Holi :body{margin:0; background: #fff url(../images/holi.jpg) center top no-repeat fixed; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#000;} */
+/* for diwali : body{margin:0; background: #094e95 url(../images/bg-body.jpg) center 39px no-repeat; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#000;}*/
+h1,h2,h3,h4,h5,h6,ul,li,form,label,input{margin:0; padding:0;
+    }
+a img{border:none;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+#wrapper{margin:0 auto; width:980px;}
+#template{width:100%; float:left;}
+#header{width:99%; float:left; padding:10px;}
+#header #logo{float:left; width:980px;height:102px; 
+}
+#header #logo a{border-style: none;
+    
+    border-width: 10px;
+    float:left; width:267px; 
+    height:104px; 
+/*background:url(../images/TMU i Zone.jpg) no-repeat; text-indent:-99999px;*/
+
+   
+}
+
+
+#header #sangathan{float:left; width:509px; height:80px;}
+#header #sangathan a{float:right; width:509px; height:80px; text-align:right;}
+
+#loginwarpper{float:left; width:96%; border:5px solid #fff; min-height:300px;background:#f1f1f1; padding:33px 40px 33px 15px;} 
+/* for diwali : #loginwarpper{float:left; margin-top:15px; width:850px; border:5px solid #fff; min-height:300px;background:#dadada; padding:40px 36px 40px 15px;}*/	
+#loginwarpper #col-left{float:left; width:30%;}
+#loginwarpper #col-right{float:right; width:63%;}
+#loginwarpper #col-right img{border:3px solid #fff;}
+#modal-loginbox{float:left; width:369px; margin-left:12px;}
+#modal-loginbox #contents {
+    -moz-border-bottom-colors: none;
+    
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+	 
+    background: none repeat scroll 0 0 #FFB106;
+     border-radius: 5%;
+    border-bottom: 4px solid #FFFFFF;
+    border-left: 4px solid #FFFFFF;
+    border-right: 4px solid #FFFFFF;
+    border-top: 4px solid #FFFFFF;
+    margin-left: 13px;
+    min-height: 100px;
+    padding: 20px 10px 21px 26px;
+    width: 380px; 
+}
+#modal-loginbox #contents h1{font-family:Segoe UI; color:#882304; font-size:26px;}
+	.form-elements{float:left; width:100%; clear:both; margin-top:10px;}
+	.label-txt{float:left; width:200px; height:15px; position:relative; top:7px; font-weight:bold; font-size:14px; position:relative; margin-left:3px;}
+
+	.label-txtmessage{float:inherit; width:200px; height:8px; position:relative; top:2px; font-weight:normal; position:relative; margin-left:130px;color:#882304;}
+
+	.form-elements input{float:left; background: #fff url(../images/input-bg.jpg) repeat-x; height:27px; width:198px; border:1px solid #c2ae71;}
+#bottom{float:left; /*background:url(../images/bg-bottom-loginbox.jpg);*/  background:url(../images/bg-bottom-flag.jpg);   height:18px; width:100%;}
+#contents a{color:#FFFF00;}
+.forgotpassword{margin-top:25px;}
+.login {position:relative; top:10px;
+    left: 0px;
+}
+
+#amizonemobile{float:left; width:369px; margin:20px 0 0 14px;}
+#amizonemobile #top-mobile{float:left; width:344px; height:3px; margin-left:12px; background:url(../images/mobile-top.jpg);}
+#amizonemobile #bottom-mobile{float:left; width:369px; height:12px; background:url(../images/mobile-bottom.jpg);}
+#amizonemobile #contents-mobile{float:left; width:344px; background:#fff; margin-left:12px;}
+#amizonemobile #contents-mobile #innercontents{float:left; border:1px solid #d2d0d0; width:332px; margin:2px 2px 2px 5px; min-height:100px; background: url("../images/mobile.jpg") no-repeat scroll 181px 68px transparent;}
+#amizonemobile #contents-mobile #innercontents h1{ float:left; background:url(../images/bg-amizonehead.jpg) no-repeat center bottom; height:30px; text-align:center; color:#494e52; font-size:16px; font-family:Segoe UI; width:100%; margin-top:6px;}
+#innercontents #download{float:left; width:173px; overflow:hidden;}
+#download ul{list-style-type:none;}
+#download li{display:list-item; padding-left:50px; font-size:11px; line-height:14px; padding-bottom:9px; margin-top:9px; border-bottom:1px dotted #CCC; }
+#Itunes, #OVI, #Endroid, #Blackberry{background:url(../images/sprite.jpg) no-repeat;}
+#win8{background:url(../images/Window.png) no-repeat 5px 0; }
+#Itunes {background-position:0 0;}
+#OVI {background-position:2px -42px;}
+#Endroid {background-position:0 -78px;}
+#Blackberry {background-position:0 -124px;}
+
+#download li a{color:#882304;}
+#copyright{ float:left; color:#867c79; font-size:11px; padding-top:15px; text-align:center; width:100%;}
+#footer{float:left; background:url(../images/bgfooter.jpg) no-repeat; width:900px; height:21px; text-align:right; padding:5px; color:#fff; font-size:11px;}
+#footer a{color:#ffb702;}
+.yellow{color:#ffb702;}
+.brown{color:#882304;}
+
+/* HELP */
+
+.container { width:262px; margin:0 auto; padding-top:200px; position:absolute; }
+
+#bar { width:100%; height:35px; padding:15px 0; background:url(../images/bar.png) repeat-x; }
+#container { width:960px; margin:0 auto;  }
+/*-------LOGIN STARTS HERE -------*/
+
+/* Login Container (default to float:right) */
+#loginContainer {
+    position:absolute;
+    float:right;
+    font-size:12px; margin-left:828px; top:-5px;
+} 
+
+/* Login Button */
+#loginButton { 
+    display:inline-block;
+    float:right;
+    background:#d2e0ea url(../images/buttonbg.png) repeat-x; 
+    border:1px solid #899caa; 
+        position:relative;
+    z-index:30;
+    cursor:pointer;
+}
+
+/* Login Button Text */
+#loginButton span {
+    color:#445058; 
+    font-size:14px; 
+    font-weight:bold; 
+    padding:7px 29px 9px 10px;
+    background:url(../images/loginArrow.png) no-repeat 53px 7px;
+    display:block
+}
+
+#loginButton:hover {
+    background:url(../images/buttonbgHover.png) repeat-x;
+}
+
+/* Login Box */
+#loginBox {
+    position:absolute;
+    top:34px;
+    right:0;
+    display:none;
+    z-index:29;
+}
+
+/* If the Login Button has been clicked */    
+#loginButton.active {
+    border-radius:3px 3px 0 0;
+}
+
+#loginButton.active span {
+    background-position:53px -76px;
+}
+
+/* A Line added to overlap the border */
+#loginButton.active em {
+    position:absolute;
+    width:100%;
+    height:1px;
+    background:#d2e0ea;
+    bottom:-1px;
+}
+
+/* Login Form */
+#loginForm {
+    width:248px; 
+    border:1px solid #899caa;
+    margin-top:-1px;
+    background:#d2e0ea;
+    padding:6px;
+}
+
+#loginForm fieldset {
+    margin:0 0 12px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#loginForm #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+
+
+#loginForm #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}
+
+/* Default Input */
+#loginForm input {
+    width:92%;
+    border:1px solid #899caa;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    color:#3a454d;
+    font-weight:bold;
+    padding:8px 8px;
+    box-shadow:inset 0px 1px 3px #bbb;
+    -webkit-box-shadow:inset 0px 1px 3px #bbb;
+    -moz-box-shadow:inset 0px 1px 3px #bbb;
+    font-size:12px;
+}
+
+/* Sign In Button */
+#loginForm #login {
+    width:auto;
+    float:left;
+    background:#339cdf url(../images/loginbuttonbg.png) repeat-x;
+    color:#fff;
+    padding:7px 10px 8px 10px;
+    text-shadow:0px -1px #278db8;
+    border:1px solid #339cdf;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    margin:0 12px 0 0;
+    cursor:pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
+}
+
+/* Forgot your password */
+#loginForm span {
+    text-align:center;
+    display:block;
+    padding:7px 0 4px 0;
+}
+
+#loginForm span a {
+   
+    text-shadow:1px 1px #fff;
+    font-size:12px;
+}
+
+input:focus {
+    outline:none;
+}
+
+/* forgot paasword -->*/
+
+
+
+
+#fancybox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1100;
+	display: none;
+}
+
+#fancybox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none;
+}
+
+#fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	z-index: 1101;
+	outline: none;
+	display: none; 
+}
+
+#fancybox-outer {
+	position: relative;
+
+}
+
+#fancybox-content {
+	width: 0;
+	height: 0;
+	padding: 0;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 1102;
+}
+
+
+#fancybox-close {
+	position: absolute;
+	top: -12px;
+	right: 8px;
+	width: 30px;
+	height: 30px;
+	background: transparent url('../images/fancybox.png') -40px 0px;
+	cursor: pointer;
+	z-index: 1103;
+	display: none;
+}
+
+#modal-loginbox2{background:#dadada; border:3PX solid #FFF; padding-top:9px;}
+#modal-loginbox2{float:left; width:369px; margin-left:12px;}
+#modal-loginbox2 #contents {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FFB702;
+    border-bottom: medium none !important;
+    border-left: 3px solid #FFFFFF;
+    border-right: 3px solid #FFFFFF;
+    border-top: 3px solid #FFFFFF;
+    margin-left: 13px;
+    min-height: 100px;
+    padding: 20px 10px 21px 26px;
+    width: 302px; 
+}
+#modal-loginbox2 #contents h1{font-family:Segoe UI; color:#882304; font-size:26px;}
+	.form-elements2{float:left; width:100%; clear:both; margin-top:10px;}
+	.label-txt{float:left; width:200px; height:15px; position:relative; top:7px; font-weight:bold; position:relative; margin-left:3px;}
+	.form-elements2 input{float:left; background: #fff url(../images/input-bg.jpg) repeat-x; height:27px; width:202px; border:1px solid #c2ae71;}
+#modal-loginbox2 #bottom{float:left; background:url(../images/bg-bottom-loginbox.jpg) no-repeat; height:18px; width:100%;}
+#capcha{width:201px; height:51px; border:1px solid  #C2AE71; margin-left:77px;}
+
+
+  /*Modal Popup*/
+
+subpageMenuBlock {
+}
